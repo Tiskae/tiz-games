@@ -1,0 +1,61 @@
+.form {
+  &__box {
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr);
+    justify-items: center;
+    grid-row-gap: 5rem;
+  }
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 2rem;
+
+  &__heading {
+    grid-column: 1 / span 2;
+    color: #fff;
+  }
+
+  &__item--title {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    background-color: $color-primary;
+    color: #fff;
+    box-shadow: 0 1rem 2rem rgba(#fff, 0.2);
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__item--input {
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    font-size: 1.3rem;
+    border: none;
+    color: $color-primary-dark;
+    transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.5rem;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $color-grey-light-1;
+    }
+
+    &:invalid {
+      border: 1px solid red;
+    }
+
+    &:valid {
+      border: 2px solid green;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}

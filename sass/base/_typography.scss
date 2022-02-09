@@ -1,0 +1,34 @@
+.heading-1 {
+  font-size: 4rem;
+  color: #fff;
+  font-family: 'Sansita Swashed', cursive;
+  font-weight: 700;
+  
+  @media only screen and (max-width: $bp-small) {
+      font-size: 5rem;  }
+      line-height: 1;
+      margin-bottom: 1rem;
+}
+
+.heading-2 {
+  font-size: 3rem;
+  font-family: 'Sansita Swashed', cursive;
+
+  &--primary {
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    letter-spacing: 2px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    transition: all .3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

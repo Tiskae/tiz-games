@@ -1,0 +1,224 @@
+.header {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 1fr;
+
+  &__logo-box {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__logo {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 10%;
+  }
+
+  &__nav {
+    grid-column: 1/ -1;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    // border-bottom: 1px solid $color-grey;
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+
+  &__nav-item {
+  }
+
+  &__nav-link:link,
+  &__nav-link:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(230, 220, 220);
+    font-size: 1.5rem;
+    transition: all 0.2s;
+  }
+
+  &__nav-link:hover {
+    color: $color-secondary;
+  }
+
+  &__part-1 {
+    background-color: rgba($color-primary, 1);
+    padding: 8rem;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 4rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      background-color: transparent;
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+      z-index: 20;
+    }
+
+    &--h3 {
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      font-weight: 100;
+      letter-spacing: 0.7rem;
+      justify-self: stretch;
+    }
+  }
+
+  &__part-2 {
+    background-image: linear-gradient(
+        rgba($color-primary, 0.2),
+        rgba($color-primary, 0.2)
+      ),
+      url("../img/ps4-x2.jpg");
+    background-position: 50% 55%;
+    background-size: cover;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+      z-index: 10;
+    }
+  }
+}
+
+// FEATURES SECTION
+
+.section__features {
+  padding: 4rem 10rem 8rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  justify-content: center;
+  grid-gap: 3.5rem;
+  align-items: flex-start;
+
+  &--heading {
+    grid-column: 1 / -1;
+    font-weight: 600;
+    justify-self: center;
+    margin-bottom: 2rem;
+  }
+}
+
+// CARDS SECTION
+
+.section__cards {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  padding: 6rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 30rem));
+  justify-content: center;
+  align-items: flex-start;
+  grid-column-gap: 4rem;
+  grid-row-gap: 6rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: minmax(min-content, 60vw);
+    align-items: flex-start;
+    grid-column-gap: 4rem;
+    grid-row-gap: 6rem;
+  }
+
+  @media only screen and (max-width: 25em) {
+    grid-template-columns: minmax(min-content, 75vw);
+  }
+
+  @media only screen and (max-width: 18.75em) {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
+
+  &--heading {
+    grid-column: 1 / -1;
+    justify-self: center;
+    text-shadow: 0.5rem 0.5rem 0.2rem rgba($color-secondary, 1);
+  }
+}
+
+// TESTIMONIAL SCETION
+
+.section__testimonials {
+  padding: 8rem;
+  color: #fff;
+  display: grid;
+  grid-template-columns: minmax(min-content, 60vw);
+  justify-content: center;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, 0.7),
+      rgba($color-secondary, 0.7)
+    ),
+    url("../img/cover.jpg");
+  background-size: cover;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 8rem 0rem;
+  }
+}
+
+// FORM SECTION
+
+.section__form {
+  margin-top: 8rem;
+  color: $color-secondary;
+  padding: 6rem;
+  background-image: linear-gradient(rgba(black, 0.8), rgba(black, 0.8)),
+    url("../img/mobile.jpg");
+}
+
+// FOOTER SECTION
+
+.footer {
+  padding: 6rem;
+  background-color: rgb(51, 49, 49);
+
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-column-gap: 3rem;
+    justify-content: center;
+  }
+
+  &__link:link,
+  &__link:visited {
+    font-size: 1.4rem;
+    color: $color-grey-light-2;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__link:hover {
+    color: #fff;
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 1.4rem;
+    color: $color-grey-light-2;
+    width: 70%;
+    margin: 5rem auto 0;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.5rem;
+    }
+  }
+}
